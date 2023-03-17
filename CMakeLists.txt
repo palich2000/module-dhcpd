@@ -1,6 +1,5 @@
-project(dhcpd)
+//project(dhcpd)
 cmake_minimum_required(VERSION 3.20)
-if(CONFIG_DHCPD)
 
   zephyr_include_directories(${ZEPHYR_BASE}/inlude)
 
@@ -16,4 +15,3 @@ if(CONFIG_DHCPD)
   src/options.c
   )
 
-endif(CONFIG_DHCPD)
