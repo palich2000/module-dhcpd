@@ -1,7 +1,6 @@
 if(CONFIG_LIBDHCPD)
-  zephyr_library()
   add_subdirectory(.. build)
   set_property(GLOBAL APPEND PROPERTY ZEPHYR_INTERFACE_LIBS dhcpd)
-  #zephyr_include_directories(../include)
+  zephyr_include_directories(../include)
   #zephyr_interface_library_named(dhcpd)
 endif()
