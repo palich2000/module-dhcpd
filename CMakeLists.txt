@@ -1,5 +1,5 @@
 
-target_include_directories(dhcpd INTERFACE include)
+#target_include_directories(dhcpd INTERFACE include)
 zephyr_interface_library_named(dhcpd)
 
 zephyr_include_directories(
