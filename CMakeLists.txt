@@ -1,6 +1,7 @@
 project(dhcpd)
 cmake_minimum_required(VERSION 3.20)
 
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 add_library(dhcpd)
 zephyr_include_directories(include)
 
