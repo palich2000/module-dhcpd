@@ -8,7 +8,7 @@ if(CONFIG_DHCPD)
 
   zephyr_library()
 
-  file(GLOB_RECURSE SOURCES /src/*.c)
+  file(GLOB_RECURSE SOURCES src/*.c)
   zephyr_library_sources(${SOURCES})
 
 endif(CONFIG_DHCPD)
