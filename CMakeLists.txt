@@ -1,9 +1,12 @@
-#project(dhcpd)
-cmake_minimum_required(VERSION 3.20)
-
-zephyr_include_directories(${ZEPHYR_BASE}/inlude)
 
 target_include_directories(dhcpd INTERFACE include)
+zephyr_interface_library_named(dhcpd)
+
+zephyr_include_directories(
+  dhcpd INTERFACE
+  ${ZEPHYR_BASE}/include
+  include/
+)
 
 zephyr_library()
 
@@ -14,4 +17,8 @@ zephyr_library_sources(
   src/dhcpserver.c
   src/options.c
 )
+
+zephyr_library_link_libraries(dhcpd)
+
+target_link_libraries(dhcpd INTERFACE zephyr_interface)
 
