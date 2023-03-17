@@ -9,7 +9,16 @@ target_compile_options(dhcpd PRIVATE -Wall -Wextra)
 set_target_properties(dhcpd PROPERTIES C_STANDARD 11)
 
 target_include_directories(dhcpd PUBLIC include)
-add_subdirectory(src)
+
+zephyr_include_directories(.)
+zephyr_library()
+zephyr_library_sources(
+args.c
+bindings.c
+dhcpmem.c
+dhcpserver.c
+options.c
+)
 
 file(CONFIGURE OUTPUT .gitignore
   NEWLINE_STYLE UNIX
