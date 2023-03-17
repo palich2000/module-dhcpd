@@ -1,5 +1,5 @@
 
-#target_include_directories(dhcpd INTERFACE include)
+if(CONFIG_DHCPD)
 zephyr_interface_library_named(dhcpd)
 
 zephyr_include_directories(
@@ -21,4 +21,4 @@ zephyr_library_sources(
 zephyr_library_link_libraries(dhcpd)
 
 target_link_libraries(dhcpd INTERFACE zephyr_interface)
-
+endif()
