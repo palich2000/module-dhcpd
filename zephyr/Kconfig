@@ -1,0 +1,12 @@
+# Copyright (c) 2022 Space Cubics, LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+config LIBDHCPD
+    bool "Enable dhcp server"
+    help
+      This option enables dhcp server as a Zephyr module.
+
+config APP_LINK_WITH_LIBDHCPD
+    bool "Make dhcp server header file available to application"
+    default y
+    depends on LIBDHCPD
